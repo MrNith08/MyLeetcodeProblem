@@ -1,0 +1,8 @@
+class Solution:
+    def isPrefixString(self, s: str, words: List[str]) -> bool:
+        from itertools import accumulate
+        res = list(accumulate(words)) 
+        if s in res:
+            return True
+        else:
+            return False
