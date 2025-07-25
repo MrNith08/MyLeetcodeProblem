@@ -1,0 +1,21 @@
+class Solution:
+    def romanToInt(self, s: str) -> int:
+        Roman_map={
+            'M':1000,
+            'D':500,
+            'C':100,
+            'L':50,
+            'X':10,
+            'V':5,
+            'I':1
+        }
+        res=0
+        prev_value=0
+        for symbol in reversed(s):
+            number=Roman_map[symbol]
+            if number <prev_value:
+                res-=number
+            else:
+                res+=number
+                prev_value=number
+        return res 
