@@ -1,0 +1,11 @@
+class Solution:
+    def isValid(self, s: str) -> bool:
+        temp=[]
+        dic={'(':')','{':'}', '[':']'}
+        for i in s:
+            if i in dic.keys():
+                temp.append(i)
+            elif i in dic.values():
+                if not temp or i != dic[temp.pop()]:
+                    return False
+        return not temp 
