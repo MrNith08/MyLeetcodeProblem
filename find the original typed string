@@ -1,0 +1,17 @@
+class Solution:
+    def possibleStringCount(self, word: str) -> int:
+        groups = []
+        i = 0
+        while i < len(word):
+            ch = word[i]
+            count = 1
+            while i + 1 < len(word) and word[i + 1] == ch:
+                count += 1
+                i += 1
+            groups.append((ch, count))
+            i += 1
+        result = 1 
+        for ch, count in groups:
+            if count > 1:
+                result += count - 1
+        return result
