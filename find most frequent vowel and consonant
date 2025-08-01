@@ -1,0 +1,12 @@
+class Solution:
+    def maxFreqSum(self, s: str) -> int:
+        vmax=0
+        cmax=0
+        for i in set(s):
+            if i in ["a","e","i","o","u"]:
+                if s.count(i)>vmax:
+                    vmax=s.count(i)
+            else:
+                if s.count(i)>cmax:
+                    cmax=s.count(i)
+        return vmax+cmax  
