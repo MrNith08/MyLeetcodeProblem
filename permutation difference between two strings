@@ -1,0 +1,9 @@
+class Solution:
+    def findPermutationDifference(self, s: str, t: str) -> int:
+        res=0
+        dic_t=dict(enumerate(t))
+        dic_t={x:y for y,x in dic_t.items()}
+        print(dic_t)
+        for i in range(len(s)):
+            res+=abs(i-dic_t[s[i]])
+        return res
