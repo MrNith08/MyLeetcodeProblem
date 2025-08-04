@@ -1,0 +1,10 @@
+class Solution:
+    def smallerNumbersThanCurrent(self, nums: List[int]) -> List[int]:
+        temp={}
+        nums_=sorted(nums,reverse=True)
+        for i in range(len(nums_)):
+            temp[nums_[i]]=len(nums_)-1-i
+        print(temp)
+        return [temp[x] for x in nums]
+            
+        
