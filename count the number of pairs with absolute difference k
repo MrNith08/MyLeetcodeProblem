@@ -1,0 +1,9 @@
+class Solution:
+    def countKDifference(self, nums: List[int], k: int) -> int:
+        count=0
+        dic=Counter(nums)
+        lst=dic.keys()
+        for i in lst:
+            if i+k in lst:
+                count+=dic[i]*dic[i+k]
+        return count 
