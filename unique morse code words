@@ -1,0 +1,14 @@
+class Solution:
+    def uniqueMorseRepresentations(self, words: List[str]) -> int:
+        y=[chr(x) for x in range(97,97+26)]
+        x=[".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."]
+        dic=dict(zip(y,x))
+        lst=[]
+        temp=""
+        for i in words:
+            temp=""
+            for j in i:
+                temp+=dic[j]
+            if temp not in lst:
+                lst.append(temp)
+        return len(lst)
