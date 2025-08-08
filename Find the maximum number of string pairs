@@ -1,0 +1,14 @@
+class Solution:
+    def maximumNumberOfStringPairs(self, words: List[str]) -> int:
+        dic={}
+        count=0
+        for i in words:
+            x="".join(sorted(i))
+            if x not in dic:
+                dic[x]=1
+            else:
+                dic[x]+=1
+        for i in dic:
+            if dic[i]>1:
+                count+=1
+        return count
