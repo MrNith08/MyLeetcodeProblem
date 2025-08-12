@@ -1,0 +1,8 @@
+class Solution:
+    def findLucky(self, arr: List[int]) -> int:
+        dic=Counter(arr)
+        lst=sorted(dic.keys(),reverse=True)
+        for i in lst:
+            if i==dic[i]:
+                return i
+        return -1
