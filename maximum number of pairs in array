@@ -1,0 +1,11 @@
+class Solution:
+    def numberOfPairs(self, nums: List[int]) -> List[int]:
+        pair=0
+        remain=0
+        dic=Counter(nums)
+        for i in dic:
+            pair+=dic[i]//2
+            dic[i]=dic[i]%2
+            if dic[i]==1:
+                remain+=1
+        return [pair,remain]
