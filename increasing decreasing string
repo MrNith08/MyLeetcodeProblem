@@ -1,0 +1,18 @@
+class Solution:
+    def sortString(self, s: str) -> str:
+        res=""
+        dic=Counter(s)
+        while True:
+            for i in sorted(dic):
+                res+=i
+                dic[i]-=1
+                if dic[i]==0:
+                    dic.pop(i)
+            for i in sorted(dic,reverse=True):
+                res+=i
+                dic[i]-=1
+                if dic[i]==0:
+                    dic.pop(i)
+            if len(dic)==0:
+                break
+        return res
