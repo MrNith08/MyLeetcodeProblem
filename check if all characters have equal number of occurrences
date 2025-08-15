@@ -1,0 +1,6 @@
+class Solution:
+    def areOccurrencesEqual(self, s: str) -> bool:
+        dic=Counter(s)
+        if len(set(dic.values()))==1:
+            return True
+        return False
