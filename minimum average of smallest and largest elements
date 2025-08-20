@@ -1,0 +1,10 @@
+class Solution:
+    def minimumAverage(self, nums: List[int]) -> float:
+        res=[]
+        nums.sort()
+        j=len(nums)-1
+        for i in range(0,int(len(nums)/2)):
+            print(i,j)
+            res.append((nums[i]+nums[j])/2)
+            j-=1
+        return min(res)
