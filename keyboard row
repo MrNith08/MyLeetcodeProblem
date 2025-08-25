@@ -1,0 +1,11 @@
+class Solution:
+    def findWords(self, words: List[str]) -> List[str]:
+        row1 = set("qwertyuiop")
+        row2 = set("asdfghjkl")
+        row3 = set("zxcvbnm")
+        res = []
+        for w in words:
+            lower_set = set(w.lower())
+            if lower_set <= row1 or lower_set <= row2 or lower_set <= row3:
+                res.append(w)
+        return res
