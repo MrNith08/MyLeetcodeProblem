@@ -1,0 +1,6 @@
+class Solution:
+    def halvesAreAlike(self, s: str) -> bool:
+        x=int(len(s)/2)
+        count1=sum(x.lower() in "aeiou" for x in s[:x])
+        count2=sum(x.lower() in "aeiou" for x in s[x:])
+        return count1==count2
