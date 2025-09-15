@@ -1,0 +1,8 @@
+class Solution:
+    def countTestedDevices(self, batteryPercentages: List[int]) -> int:
+        start = 0
+        for i in range(len(batteryPercentages)):
+            if batteryPercentages[i] - start > 0:
+                start += 1
+
+        return start
